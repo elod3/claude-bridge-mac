@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Claude Bridge",
+  "version": "1.0.0",
+  "author": "Előd",
+  "description": "Lets Claude Code use this browser with your own sign-ins: tabs, reading pages, clicking, typing, screenshots. Everything goes through a local native-messaging host; nothing listens on the network.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "claude-bridge@elod",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "nativeMessaging"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  }
+}
