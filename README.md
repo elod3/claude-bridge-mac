@@ -7,13 +7,26 @@ cu extensia Claude Bridge. Nimic nu ascultă pe rețea: extensia vorbește doar
 cu un program local, prin native messaging, iar Claude Code vorbește cu el
 printr-un socket pe care îl poate deschide doar utilizatorul tău.
 
-## Instalare (o singură dată)
+## Instalare cu Claude Code
 
-1. Dezarhivează `claude-bridge-mac.zip` (dublu-click), de exemplu în Downloads.
+Dă-i lui Claude Code linkul ăsta și spune-i: „instalează Claude Bridge de aici”.
+Pentru Claude, comanda e:
+
+```
+git clone https://github.com/elod3/claude-bridge-mac.git ~/claude-bridge-mac && bash ~/claude-bridge-mac/install.sh
+```
+
+Instalatorul rulează singur până la capăt și termină cu „Gata, merge.” Apoi
+Claude Code trebuie repornit (o sesiune nouă), ca să vadă serverul `bridge`.
+
+## Instalare de mână (o singură dată)
+
+1. Ia folderul: `git clone https://github.com/elod3/claude-bridge-mac.git ~/claude-bridge-mac`
+   (sau Code → Download ZIP pe GitHub și dezarhivează-l în home).
 2. Deschide **Terminal** și rulează:
 
    ```
-   bash ~/Downloads/claude-bridge-mac/install.sh
+   bash ~/claude-bridge-mac/install.sh
    ```
 
 3. Instalatorul:
@@ -30,7 +43,7 @@ printr-un socket pe care îl poate deschide doar utilizatorul tău.
    „deschide inhabitstudio.ro/wp-admin în browser și spune-mi ce comenzi noi sunt”.
 
 Dacă îți cere Python, rulează `xcode-select --install`, apasă Install, apoi
-rulează din nou pasul 2.
+rulează din nou install.sh.
 
 ## De știut
 
@@ -39,12 +52,12 @@ rulează din nou pasul 2.
   Claude primește mesajul „Claude Browser is not running” și îți spune.
 - Click-urile și tastele sunt evenimente din pagină, nu mouse real: câteva
   site-uri le ignoră. Capturile aduc tabul în față.
-- Update: rulezi din nou `install.sh` dintr-o versiune nouă. Conturile rămân.
+- Update: `cd ~/claude-bridge-mac && git pull && bash install.sh`. Conturile rămân.
 
 ## Dezinstalare
 
 ```
-bash ~/Downloads/claude-bridge-mac/install.sh remove
+bash ~/claude-bridge-mac/install.sh remove
 ```
 
 Scoate aplicația, extensia și legătura cu Claude Code. Profilul browserului
